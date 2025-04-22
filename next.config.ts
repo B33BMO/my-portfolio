@@ -12,11 +12,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "https://i.ytimg.com",
+        hostname: "i.ytimg.com",
       },
       {
         protocol: "https",
-        hostname: "https://thenorthmendayz.com",
+        hostname: "thenorthmendayz.com",
       },
       {
         protocol: "https",
