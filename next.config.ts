@@ -8,6 +8,18 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "i.imgur.com",
+      },
+      {
+        protocol: "https",
+        hostname: "https://i.ytimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "https://thenorthmendayz.com",
+      },
+      {
+        protocol: "https",
         hostname: "images.steamusercontent.com",
       },
       {
