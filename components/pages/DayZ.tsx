@@ -28,7 +28,7 @@ const sections = [
     bg: "https://images.unsplash.com/photo-1642076371303-5eb3e6a7b81e?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     images: [
       { src: "https://thenorthmendayz.com/wp-content/uploads/2025/04/Nytt_projekt.png", label: "MMG Crates" },
-      { src: "blob:https://imgur.com/8d2e0b75-9a72-4ce6-9682-09ef22401094", label: "Storage Methods" },
+      { src: "https://i.imgur.com/KyIjgon.jpeg", label: "Storage Methods" },
     ],
   },
   {
