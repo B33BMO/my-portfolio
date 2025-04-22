@@ -16,7 +16,7 @@ const sections = [
     title: "Basebuilding",
     bg: "https://images.unsplash.com/photo-1719679041967-3873e5b3daba?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     images: [
-      { src: "flagpole.jpg", label: "Flag Pole" },
+      { src: "https://i.ytimg.com/vi/Rai2bc0bRyI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAVW1Cp429VcXl094SU6s7FurftEg", label: "Flag Pole" },
       { src: "basebuilding.jpg", label: "Walls and Gates" },
       { src: "/doubledoor.png", label: "Double Door" },
       { src: "https://i.redd.it/p0bu10i24vd51.png", label: "Watchtower" },
