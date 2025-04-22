@@ -26,6 +26,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.redd.it", // if you're using this too
       },
+      {
+        protocol: "https",
+        hostname: "reddit.com", // if you're using this too
+      },
     ],
   },
 };
