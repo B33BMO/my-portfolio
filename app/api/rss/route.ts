@@ -22,4 +22,3 @@ export async function GET() {
 
   return Response.json(allItems.slice(0, 15)); // Limit to 15 latest
 }
- 
