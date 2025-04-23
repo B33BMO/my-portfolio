@@ -25,7 +25,7 @@ export default function News() {
         setLoading(false);
       }
     };
-
+ 
     fetchArticles();
   }, []);
 
