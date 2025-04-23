@@ -5,20 +5,29 @@ import { useState } from "react";
 export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
-    const res = await fetch("/api/admin-login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+    setLoading(true);
+    setError("");
 
-    if (res.ok) {
-      setError("");
-      onLogin(); // trigger success handler
-    } else {
-      setError("❌ Invalid password. Try again, commander.");
+    try {
+      const res = await fetch("/api/admin-login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (res.ok) {
+        onLogin(); // ✅ Login success
+      } else {
+        setError("❌ Invalid password. Try again, commander.");
+      }
+    } catch (err) {
+      setError("⚠️ Login request failed. Is the server up?");
     }
+
+    setLoading(false);
   };
 
   return (
@@ -35,9 +44,14 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
         {error && <p className="text-red-400 text-sm mb-2">{error}</p>}
         <button
           onClick={handleLogin}
-          className="w-full bg-cyan-600 hover:bg-cyan-500 transition py-2 rounded"
+          className="w-full bg-cyan-600 hover:bg-cyan-500 transition py-2 rounded flex justify-center items-center"
+          disabled={loading}
         >
-          Login
+          {loading ? (
+            <span className="animate-spin border-2 border-white border-t-transparent h-4 w-4 rounded-full"></span>
+          ) : (
+            "Login"
+          )}
         </button>
       </div>
     </div>

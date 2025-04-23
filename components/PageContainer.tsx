@@ -6,18 +6,38 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import News from "./pages/News";
 import DayZ from "./pages/DayZ";
-import AdminLogin from "./pages/AdminLogin"; // 💥 make sure this path matches
+import AdminLogin from "./pages/AdminLogin";
+import AdminPanel from "./pages/AdminPanel";
+import MinecraftPanel from "./pages/MinecraftPanel"; // 🔧 Make sure this file exists!
 import BackgroundVideo from "./BackgroundVideo";
 
+type Page =
+  | "home"
+  | "projects"
+  | "news"
+  | "dayz"
+  | "admin"
+  | "minecraft"
+  | "misc";
+
 export default function PageContainer() {
-  const [page, setPage] = useState<"home" | "projects" | "news" | "dayz" | "admin">("home");
+  const [page, setPage] = useState<Page>("home");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const renderPage = () => {
+    if (page === "admin") {
+      return isLoggedIn
+        ? <AdminPanel onSelect={(subpage: Page) => setPage(subpage)} />
+        : <AdminLogin onLogin={() => setIsLoggedIn(true)} />;
+    }
+
+    if (page === "minecraft") return <MinecraftPanel />;
+    if (page === "misc") return <div className="text-white p-8">🧪 Misc Panel Placeholder</div>;
+
     switch (page) {
       case "projects": return <Projects />;
       case "news": return <News />;
       case "dayz": return <DayZ />;
-      case "admin": return <AdminLogin onLogin={() => setPage("home")} />;
       default: return <Home />;
     }
   };
@@ -31,7 +51,7 @@ export default function PageContainer() {
           {["home", "projects", "news", "dayz"].map((p) => (
             <button
               key={p}
-              onClick={() => setPage(p as any)}
+              onClick={() => setPage(p as Page)}
               className="capitalize text-white/80 hover:text-cyan-400 transition"
             >
               {p}
@@ -51,7 +71,7 @@ export default function PageContainer() {
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={page}
+          key={page + (isLoggedIn ? "-auth" : "-guest")}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
