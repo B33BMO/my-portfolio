@@ -8,10 +8,10 @@ import News from "./pages/News";
 import DayZ from "./pages/DayZ";
 import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./pages/AdminPanel";
-import MinecraftPanel from "./pages/MinecraftPanel"; // 🔧 Make sure this file exists!
+import MinecraftPanel from "./pages/MinecraftPanel";
 import BackgroundVideo from "./BackgroundVideo";
 
-type Page =
+export type Page =
   | "home"
   | "projects"
   | "news"

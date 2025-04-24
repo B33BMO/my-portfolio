@@ -1,9 +1,14 @@
 "use client";
 
+import { Page } from "../PageContainer"; // ✅ Ensure this path is correct!
 import { motion } from "framer-motion";
 
-export default function AdminPanel({ onSelect }: { onSelect?: (page: string) => void }) {
-  const panels = [
+type AdminPanelProps = {
+  onSelect?: (page: Page) => void;
+};
+
+export default function AdminPanel({ onSelect }: AdminPanelProps) {
+  const panels: { key: Page; title: string; description: string }[] = [
     { key: "minecraft", title: "Minecraft Server", description: "Manage the Minecraft world and its players." },
     { key: "misc", title: "Misc Tools", description: "Random power tools and secrets." },
   ];
