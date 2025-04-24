@@ -1,4 +1,4 @@
-import PageWrapper from "../PageWrapper";
+import Page from "../PageWrapper";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
@@ -11,7 +11,7 @@ export default function Tools() {
   ];
 
   return (
-    <PageWrapper>
+    <Page>
       <div className="p-8 min-h-screen text-white">
         <h1 className="text-4xl font-bold text-center mb-10">Tools</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -30,6 +30,6 @@ export default function Tools() {
           ))}
         </div>
       </div>
-    </PageWrapper>
+    </Page>
   );
 }

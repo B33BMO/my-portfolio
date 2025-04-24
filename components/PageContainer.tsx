@@ -9,6 +9,7 @@ import DayZ from "./pages/DayZ";
 import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./pages/AdminPanel";
 import MinecraftPanel from "./pages/MinecraftPanel";
+import Tools from "./pages/Tools";
 import BackgroundVideo from "./BackgroundVideo";
 
 export type Page =
@@ -18,7 +19,8 @@ export type Page =
   | "dayz"
   | "admin"
   | "minecraft"
-  | "misc";
+  | "misc"
+  | "tools";
 
 export default function PageContainer() {
   const [page, setPage] = useState<Page>("home");
@@ -33,6 +35,7 @@ export default function PageContainer() {
 
     if (page === "minecraft") return <MinecraftPanel />;
     if (page === "misc") return <div className="text-white p-8">🧪 Misc Panel Placeholder</div>;
+    if (page === "tools") return <Tools />;
 
     switch (page) {
       case "projects": return <Projects />;
@@ -48,7 +51,7 @@ export default function PageContainer() {
 
       <nav className="flex justify-between items-center p-6 border-b border-white/10">
         <div className="space-x-6">
-          {["home", "projects", "news", "dayz"].map((p) => (
+          {["home", "projects", "news", "dayz", "tools"].map((p) => (
             <button
               key={p}
               onClick={() => setPage(p as Page)}
