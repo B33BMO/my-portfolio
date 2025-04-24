@@ -1,10 +1,9 @@
+"use client";
+
 import PageWrapper from "../PageWrapper";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 
-export default function Tools() {
-  const router = useRouter();
-
+export default function Tools({ onSelect }: { onSelect: (page: string) => void }) {
   const tools = [
     { key: "yt-downloader", title: "YouTube Downloader", description: "Download videos from YouTube with ease." },
     { key: "ip-trace", title: "IP Trace", description: "Trace IP addresses and get geolocation data." },
@@ -18,7 +17,7 @@ export default function Tools() {
           {tools.map((tool, i) => (
             <motion.div
               key={tool.key}
-              onClick={() => router.push(`/${tool.key}`)}
+              onClick={() => onSelect(tool.key)}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}

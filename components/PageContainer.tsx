@@ -20,7 +20,9 @@ export type Page =
   | "admin"
   | "minecraft"
   | "misc"
-  | "tools";
+  | "tools"
+  | "yt-downloader"
+  | "ip-trace";
 
 export default function PageContainer() {
   const [page, setPage] = useState<Page>("home");
@@ -35,7 +37,7 @@ export default function PageContainer() {
 
     if (page === "minecraft") return <MinecraftPanel />;
     if (page === "misc") return <div className="text-white p-8">🧪 Misc Panel Placeholder</div>;
-    if (page === "tools") return <Tools />;
+    if (page === "tools") return <Tools onSelect={(subpage: Page) => setPage(subpage)} />;
 
     switch (page) {
       case "projects": return <Projects />;
