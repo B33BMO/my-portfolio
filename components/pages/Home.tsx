@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-8">Connect with Me</h1>
         <div className="flex space-x-6">
           <a
-            href="https://discord.com/invite/YOUR_INVITE_CODE"
+            href="https://discord.com/users/b33bmo/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-400 transition"
@@ -17,7 +17,7 @@ export default function Home() {
             <FaDiscord size={40} />
           </a>
           <a
-            href="https://steamcommunity.com/id/YOUR_ID"
+            href="https://steamcommunity.com/id/b33bmo"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-400 transition"
