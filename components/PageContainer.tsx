@@ -31,13 +31,13 @@ export default function PageContainer() {
   const renderPage = () => {
     if (page === "admin") {
       return isLoggedIn
-        ? <AdminPanel onSelect={(subpage: Page) => setPage(subpage)} />
+        ? <AdminPanel onSelect={(subpage) => setPage(subpage as Page)} />
         : <AdminLogin onLogin={() => setIsLoggedIn(true)} />;
     }
 
     if (page === "minecraft") return <MinecraftPanel />;
     if (page === "misc") return <div className="text-white p-8">🧪 Misc Panel Placeholder</div>;
-    if (page === "tools") return <Tools onSelect={(subpage: Page) => setPage(subpage)} />;
+    if (page === "tools") return <Tools onSelect={(subpage) => setPage(subpage as Page)} />;
 
     switch (page) {
       case "projects": return <Projects />;
